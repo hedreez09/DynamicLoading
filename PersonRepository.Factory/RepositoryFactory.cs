@@ -8,7 +8,7 @@ namespace PersonRepository.Factory
     {
         public static IPersonRepository GetRepository()
         {
-            string repositoryTypeName = ConfigurationManager.AppSettings["repository"];
+            string repositoryTypeName = ConfigurationManager.AppSettings["RepositoryType"];
             Type repositoryType = Type.GetType(repositoryTypeName);
             object repository = Activator.CreateInstance(repositoryType);
             IPersonRepository personRepository = repository as IPersonRepository;
